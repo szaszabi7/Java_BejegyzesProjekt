@@ -21,6 +21,8 @@ public class Main {
 
         randomLike();
 
+        modosit();
+
         for (Bejegyzes bejegyzes : bejegyzesek) {
             System.out.println(bejegyzes.toString());
         }
@@ -77,9 +79,12 @@ public class Main {
         }
     }
 
-    //2e)
+    public static void modosit() {
+        System.out.print("Módosítsa a második bejegyzést: ");
+        String edit = sc.next();
+        bejegyzesek.get(1).setTartalom(edit);
+    }
 
-    //
     public static int legnepszerubb() {
         int max = bejegyzesek.get(0).getLikeok();
         for (int i = 1; i < bejegyzesek.size(); i++) {
@@ -105,5 +110,10 @@ public class Main {
             if (bejegyzesek.get(i).getLikeok() < 15) darab++;
         }
         return darab;
+    }
+
+    public static void rendez() {
+        int temp = bejegyzesek.get(0).getLikeok();
+
     }
 }
