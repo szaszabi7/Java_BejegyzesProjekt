@@ -1,5 +1,8 @@
 package hu.petrik;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,9 +14,10 @@ public class Main {
 
     public static void main(String[] args) {
         bejegyzes2();
-        System.out.println(bejegyzesek.toString());
 
         beker();
+
+        beolvas("bejegyzesek.txt");
         System.out.println(bejegyzesek.toString());
     }
 
@@ -32,6 +36,25 @@ public class Main {
             System.out.print("Tartalom: ");
             adat[1] = sc.next();
             bejegyzesek.add(new Bejegyzes(adat[0], adat[1]));
+        }
+    }
+
+    public static void beolvas(String path) {
+        try {
+            FileReader fr = new FileReader(path);
+            BufferedReader br = new BufferedReader(fr);
+            String sor = br.readLine();
+            String[] adatok;
+            while (sor != null) {
+                adatok = sor.split(";");
+                sor = br.readLine();
+                bejegyzesek.add(new Bejegyzes(adatok[0], adatok[1]));
+            }
+
+            br.close();
+            fr.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
