@@ -25,7 +25,9 @@ public class Main {
             System.out.println(bejegyzesek.get(i).toString());
         }
 
-        System.out.println(legnepszerubb());
+        System.out.println(legnepszerubb() + "\n");
+
+        tobbMint35();
     }
 
     public static void bejegyzes2() {
@@ -84,5 +86,14 @@ public class Main {
             }
         }
         return max;
+    }
+
+    public static void tobbMint35() {
+        boolean van = false;
+        for (int i = 0; i < bejegyzesek.size(); i++) {
+            if (bejegyzesek.get(i).getLikeok() > 35) van = true;
+        }
+        if (van) System.out.println("Van olyan bejegyzés ami 35 likenál többet kapott");
+        else System.out.println("Nincs olyan bejegyzés ami 35 likenál többet kapott");
     }
 }
