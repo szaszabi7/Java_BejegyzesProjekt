@@ -43,6 +43,13 @@ public class Bejegyzes {
     }
 
     public void like() {
+        likeok++;
+    }
 
+    @Override
+    public String toString() {
+        return this.szerzo + " - " + this.likeok + " - " + this.letrejott + "\n" +
+                "Szerkesztve: " + this.szerkesztve +
+                this.tartalom;
     }
 }
