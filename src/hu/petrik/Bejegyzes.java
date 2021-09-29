@@ -52,6 +52,6 @@ public class Bejegyzes {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return this.szerzo + " - " + this.likeok + " - " + this.letrejott.format(formatter) + "\n" +
                 "Szerkesztve: " + this.szerkesztve.format(formatter) + "\n" +
-                this.tartalom + "\n";
+                this.tartalom + "\n\n";
     }
 }

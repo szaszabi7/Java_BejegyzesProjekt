@@ -20,7 +20,12 @@ public class Main {
         beolvas("bejegyzesek.txt");
 
         randomLike();
-        System.out.println(bejegyzesek.toString());
+
+        for (int i = 0; i < bejegyzesek.size(); i++) {
+            System.out.println(bejegyzesek.get(i).toString());
+        }
+
+        System.out.println(legnepszerubb());
     }
 
     public static void bejegyzes2() {
@@ -66,5 +71,18 @@ public class Main {
         for (int i = 0; i < szor20; i++) {
             bejegyzesek.get(rnd.nextInt(bejegyzesek.size())).like();
         }
+    }
+
+    //2e)
+
+    //
+    public static int legnepszerubb() {
+        int max = bejegyzesek.get(0).getLikeok();
+        for (int i = 1; i < bejegyzesek.size(); i++) {
+            if (max < bejegyzesek.get(i).getLikeok()) {
+                max = bejegyzesek.get(i).getLikeok();
+            }
+        }
+        return max;
     }
 }
