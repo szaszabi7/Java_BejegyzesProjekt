@@ -21,13 +21,15 @@ public class Main {
 
         randomLike();
 
-        for (int i = 0; i < bejegyzesek.size(); i++) {
-            System.out.println(bejegyzesek.get(i).toString());
+        for (Bejegyzes bejegyzes : bejegyzesek) {
+            System.out.println(bejegyzes.toString());
         }
 
-        System.out.println(legnepszerubb() + "\n");
+        System.out.println("Legtöbb like: " + legnepszerubb());
 
         tobbMint35();
+
+        System.out.println("15-nél kevesebb likeot kapó bejegyzésel száma: "+ kevesebbMint15());
     }
 
     public static void bejegyzes2() {
@@ -95,5 +97,13 @@ public class Main {
         }
         if (van) System.out.println("Van olyan bejegyzés ami 35 likenál többet kapott");
         else System.out.println("Nincs olyan bejegyzés ami 35 likenál többet kapott");
+    }
+
+    public static int kevesebbMint15() {
+        int darab = 0;
+        for (int i = 0; i < bejegyzesek.size(); i++) {
+            if (bejegyzesek.get(i).getLikeok() < 15) darab++;
+        }
+        return darab;
     }
 }
