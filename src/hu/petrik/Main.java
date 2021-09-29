@@ -113,7 +113,6 @@ public class Main {
     }
 
     public static void rendez() {
-        int temp = bejegyzesek.get(0).getLikeok();
-
+        
     }
 }
