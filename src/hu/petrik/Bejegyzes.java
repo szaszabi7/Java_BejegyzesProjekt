@@ -44,7 +44,7 @@ public class Bejegyzes {
     }
 
     public void like() {
-        likeok++;
+        this.likeok++;
     }
 
     @Override

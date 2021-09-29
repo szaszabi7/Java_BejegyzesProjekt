@@ -18,6 +18,8 @@ public class Main {
         beker();
 
         beolvas("bejegyzesek.txt");
+
+        randomLike();
         System.out.println(bejegyzesek.toString());
     }
 
@@ -55,6 +57,14 @@ public class Main {
             fr.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public static void randomLike() {
+        Random rnd = new Random();
+        int szor20 = (bejegyzesek.size() * 20);
+        for (int i = 0; i < szor20; i++) {
+            bejegyzesek.get(rnd.nextInt(bejegyzesek.size())).like();
         }
     }
 }
